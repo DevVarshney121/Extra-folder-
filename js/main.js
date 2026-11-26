@@ -1,3 +1,50 @@
+/* =========================
+   EASY IMAGE PATHS
+   Change image paths ONLY here.
+   ========================= */
+const IMAGE_PATHS = {
+  logo: "images/elite-stay-logo.png",
+  pgExterior: "images/PG Exterior.png",
+  room3Main: "images/3 Seater Room.jpeg",
+  office: "images/Office area.jpeg",
+
+  room4Current1: "images/3 seater 3.jpeg",
+  room2Main: "images/Two Seater.jpeg",
+  room1Main: "images/single sharing private room 1.png",
+
+  studyTable: "images/table tannish.png",
+  lunch: "images/lunch.png",
+  outdoor: "images/outdoor view.png",
+  breakfast1: "images/breakfast img 1.png",
+  freeze: "images/Freeze.jpeg",
+  washingMachine: "images/Washing Machine.jpeg",
+  washroom: "images/washrom 2.png",
+  parking: "images/Parking img.jpeg",
+  buildingEntrance: "images/Building & Entrance.jpeg",
+  dinner: "images/dinner.png",
+  breakfast2: "images/breakfast img 2.png",
+  veranda: "images/varanda.jpeg",
+
+  room3Alt1: "images/3 seater 1 .jpeg",
+  room2Alt1: "images/2 Seater room 2 .jpeg",
+  room2Alt2: "images/2 Seater Room.jpeg",
+  room1Alt2: "images/single sharing private room 1 img 2.png",
+
+  /* Existing 4-seater path used by the Rooms page */
+  room4Legacy: "images/4 seater.png",
+
+  /* Your new 4-seater images — available here for easy replacement */
+  room4New1: "images/4 seater image 2.png",
+  room4New2: "images/4 seater img 1.png",
+  room4New3: "images/4 seater img 3.png"
+};
+
+/* Load all normal page images from IMAGE_PATHS. */
+document.querySelectorAll("[data-image]").forEach(img => {
+  const path = IMAGE_PATHS[img.dataset.image];
+  if (path) img.src = path;
+});
+
 
 /* The Elite Stay PG & Hostel frontend interactions. Replace CONFIG values with verified contact details. */
 const CONFIG = {
@@ -108,28 +155,28 @@ if (modalBackdrop) {
 /* Auto-rotate room-card images every 5 seconds on every page that contains room cards. */
 const ROOM_MEDIA = {
   "4 Seater Room": [
-    "images/3 seater 3.jpeg",
-    "images/3 seater 1 .jpeg",
-    "images/3 Seater Room.jpeg",
-    "images/Building & Entrance.jpeg"
+    IMAGE_PATHS.room4Current1,
+    IMAGE_PATHS.room3Alt1,
+    IMAGE_PATHS.room3Main,
+    IMAGE_PATHS.buildingEntrance
   ],
   "3 Seater Room": [
-    "images/3 Seater Room.jpeg",
-    "images/3 seater 1 .jpeg",
-    "images/3 seater 3.jpeg",
-    "images/Building & Entrance.jpeg"
+    IMAGE_PATHS.room3Main,
+    IMAGE_PATHS.room3Alt1,
+    IMAGE_PATHS.room4Current1,
+    IMAGE_PATHS.buildingEntrance
   ],
   "2 Seater Room": [
-    "images/Two Seater.jpeg",
-    "images/2 Seater room 2 .jpeg",
-    "images/2 Seater Room.jpeg",
-    "images/2 Seater Room.jpeg"
+    IMAGE_PATHS.room2Main,
+    IMAGE_PATHS.room2Alt1,
+    IMAGE_PATHS.room2Alt2,
+    IMAGE_PATHS.room2Alt2
   ],
   "1 Seater Room": [
-    "images/single sharing private room 1.png",
-    "images/single sharing private room 1 img 2.png",
-    "images/single sharing private room 1.png",
-    "images/single sharing private room 1 img 2.png"
+    IMAGE_PATHS.room1Main,
+    IMAGE_PATHS.room1Alt2,
+    IMAGE_PATHS.room1Main,
+    IMAGE_PATHS.room1Alt2
   ]
 };
 
